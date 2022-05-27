@@ -2,8 +2,10 @@
 const GetColorPair = require("./colorPair");
 const ProcessPairNumberFromColor = require("./getPairNumberFromColor.js");
 const FindColorsFromPairNumber = require("./getColorFromPairNumber.js");
+const printManual = require("./printColorManual.js");
 const getColor = new FindColorsFromPairNumber();
 const getPairNumber = new ProcessPairNumberFromColor();
+const getPrintedManual = new printManual();
 
 function test() {
   pairNumber = 4;
@@ -38,7 +40,9 @@ function test() {
   console.log(`[In]Colors: ${testPair2}, [Out] PairNumber: ${pairNumber}`);
   console.assert(pairNumber == 6);
 
-  console.log("------------------Color Manual --------------------------");
-  getColor.printColorsManual();
+  testPair2.majorColor = "WHITE";
+  testPair2.minorColor = "RED";
+  getPrintedManual.showPairNumberFromColorPair(testPair2);
+  getPrintedManual.printColorManual();
 }
 test();

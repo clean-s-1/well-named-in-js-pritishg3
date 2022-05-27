@@ -33,15 +33,6 @@ class FindColorsFromPairNumber {
     pair.minorColor = this.MinorColorNames[minorColorIndex];
     return pair;
   }
-
-  printColorsManual() {
-    let pairNumber = 0;
-    while (pairNumber < this.minorColorListSize * this.majorColorListSize) {
-      pairNumber++;
-      let pair = this.getColorFromPairNumber(pairNumber);
-      console.log(`${pairNumber}: ${pair.toString()}`);
-    }
-  }
 }
 
 module.exports = FindColorsFromPairNumber;
